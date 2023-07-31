@@ -1,0 +1,45 @@
+SONARQUBE
+
+SonarQube is a self-managed, automatic code review tool that systematically helps you deliver clean code. As a core element of our Sonar solution, SonarQube integrates into your existing workflow and detects issues in your code to help you perform continuous code inspections of your projects. The tool analyses 30+ different programming languages and integrates into your CI pipeline and DevOps platform to ensure that your code meets high-quality standards.
+
+Writing clean code
+Writing clean code is essential to maintaining a healthy codebase. We define Clean Code as code that meets a certain defined standard, i.e. code that is reliable, secure, maintainable, readable, and modular, in addition to having other key attributes. This applies to all code: source code, test code, infrastructure as code, glue code, scripts, etc.
+
+Sonar's Clean as You Code approach eliminates many of the pitfalls that arise from reviewing code at a late stage in the development process. The Clean as You Code approach uses your quality gate to alert/inform you when there’s something to fix or review in your new code (code that has been added or changed), allowing you to maintain high standards and focus on code quality.
+
+The Sonar solution performs checks at every stage of the development process:
+
+1.SonarLint provides immediate feedback in your IDE as you write code so you can find and fix issues before a commit.
+2.SonarQube’s PR analysis fits into your CI/CD workflows with SonarQube’s PR analysis and use of quality gates.
+3.Quality gates keep code with issues from being released to production, a key tool in helping you incorporate the Clean as You Code methodology.
+4.The Clean as You Code approach helps you focus on submitting new, clean code for production, knowing that your existing code will be improved over time.
+
+Quality Gate
+
+A quality gate is an indicator of code quality that can be configured to give a go/no-go signal on the current release-worthiness of the code. It indicates whether your code is clean and can move forward.
+
+-> A passing (green) quality gate means the code meets your standard and is ready to be merged.
+-> A failing (red) quality gate means there are issues to address.
+
+Analyzing Source Code:
+Once the SonarQube platform has been installed, you're ready to install a scanner and begin creating projects. To do that, you must install and configure the scanner that is most appropriate for your needs. Do you build with:
+
+Gradle - SonarScanner for Gradle
+.NET - SonarScanner for .NET
+Maven - SonarScanner for Maven
+Jenkins - Jenkins extension for SonarQube
+Azure DevOps - SonarQube Extension for Azure DevOps
+Ant - SonarScanner for Ant
+Anything else (CLI) - SonarScanner
+
+What does analysis produce?
+SonarQube can analyze up to 29 different languages depending on your edition. The outcome of this analysis will be quality measures and issues (instances where coding rules were broken). However, what gets analyzed will vary depending on the language:
+
+->On all languages, "blame" data will automatically be imported from supported SCM providers. Git and SVN are supported automatically. Other providers require additional plugins.
+->On all languages, a static analysis of source code is performed (Java files, COBOL programs, etc.)
+->For certain languages, the static analysis should be done on compiled code ( .class files in Java, .dll files in C#, etc.)
+
+What happens during analysis?
+During analysis, data is requested from the server, the files provided to the analysis are analyzed, and the resulting data is sent back to the server at the end in the form of a report, which is then analyzed asynchronously server-side.
+
+Analysis reports are queued and processed sequentially, so it is quite possible that for a brief period after your analysis log shows completion, the updated values are not visible in your SonarQube project. However, you will be able to tell what's going on because an icon will be added on the project homepage to the right of the project name. Mouse over it for more detail (and links if you're logged in with the proper permissions).
